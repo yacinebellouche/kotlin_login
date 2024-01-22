@@ -24,6 +24,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
@@ -54,7 +55,7 @@ fun Login_Form(modifier: Modifier = Modifier) {
     var password: String by remember { mutableStateOf("") }
     Column {
         Text(
-            text = "Login",
+            text = stringResource(R.string.login),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(20.dp),
@@ -63,7 +64,7 @@ fun Login_Form(modifier: Modifier = Modifier) {
         )
         OutlinedTextField(
             value = email,
-            label = { Text("Email") },
+            label = { Text(stringResource(R.string.email)) },
             onValueChange = { email = it },
             modifier = Modifier
                 .fillMaxWidth()
@@ -73,14 +74,14 @@ fun Login_Form(modifier: Modifier = Modifier) {
             trailingIcon = {
                 Icon(
                     imageVector = Icons.Default.Email,
-                    contentDescription = "Email"
+                    contentDescription = "Email Icon"
                 )
             }
         )
 
         OutlinedTextField(
             value = password,
-            label = { Text("Password") },
+            label = { Text(stringResource(R.string.password)) },
             onValueChange = { password = it },
             modifier = Modifier
                 .fillMaxWidth()
@@ -95,13 +96,13 @@ fun Login_Form(modifier: Modifier = Modifier) {
             }
         )
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 10.dp),
             shape = AbsoluteRoundedCornerShape(10.dp)
         ) {
-            Text(text = "Submit")
+            Text(text = stringResource(R.string.submit))
 
         }
     }
